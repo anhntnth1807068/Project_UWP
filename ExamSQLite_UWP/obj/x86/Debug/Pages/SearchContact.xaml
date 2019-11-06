@@ -34,11 +34,12 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">Sreach Contact</TextBlock>
         <TextBlock Grid.Row="1" Grid.Column="0">Name</TextBlock>
-        <TextBox x:ConnectionId='2' x:Name="Email" Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox x:ConnectionId='2' x:Name="Name" Grid.Row="1" Grid.Column="1"></TextBox>
         <TextBlock Grid.Row="2" Grid.Column="0">Phone</TextBlock>
-        <PasswordBox x:ConnectionId='3' x:Name="Password" Grid.Row="2" Grid.Column="1"></PasswordBox>
+        <TextBox x:ConnectionId='3' x:Name="Phone" Grid.Row="1" Grid.Column="1"></TextBox>
+        
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
-            <Button x:ConnectionId='4' Margin="10"                            >Search</Button>
+            <Button x:ConnectionId='4' Margin="10"                            >Search Contact</Button>
 
         </StackPanel>
 

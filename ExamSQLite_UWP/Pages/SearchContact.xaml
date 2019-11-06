@@ -34,11 +34,12 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">Sreach Contact</TextBlock>
         <TextBlock Grid.Row="1" Grid.Column="0">Name</TextBlock>
-        <TextBox x:Name="Email" Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox x:Name="Name" Grid.Row="1" Grid.Column="1"></TextBox>
         <TextBlock Grid.Row="2" Grid.Column="0">Phone</TextBlock>
-        <PasswordBox x:Name="Password" Grid.Row="2" Grid.Column="1"></PasswordBox>
+        <TextBox x:Name="Phone" Grid.Row="1" Grid.Column="1"></TextBox>
+        
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
-            <Button Margin="10" Click="ButtonLogin_OnClick">Search</Button>
+            <Button Margin="10" Click="ButtonLogin_OnClick">Search Contact</Button>
 
         </StackPanel>
 

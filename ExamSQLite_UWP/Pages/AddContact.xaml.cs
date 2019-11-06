@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ExamSQLite_UWP.Entity;
+using ExamSQLite_UWP.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,13 +24,25 @@ namespace ExamSQLite_UWP.Pages
     /// </summary>
     public sealed partial class AddContact : Page
     {
+        private ContactModel contactModel;
+        //static int Id;
         public AddContact()
         {
             this.InitializeComponent();
+            this.contactModel = new ContactModel();
         }
+
+      
 
         private void ButtonLogin_OnClick(object sender, RoutedEventArgs e)
         {
+            var contact = new Contact
+            {
+                Name = this.Name.Text,
+                PhoneNumber = this.PhoneNumber.Text,
+               
+            };
+            contactModel.Insert(contact);
 
         }
     }

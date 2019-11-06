@@ -15,7 +15,7 @@ namespace ExamSQLite_UWP.Models
         {
             try
             {
-                using (var stt = SQLiteUtil.GetIntances().Connection.Prepare("INSERT INTO Note (Name, PhoneNumber) VALUES ( ? , ?)"))
+                using (var stt = SQLiteUtil.GetIntances().Connection.Prepare("INSERT INTO Contact (Name, PhoneNumber) VALUES ( ? , ?)"))
                 {
                     stt.Bind(1, contact.Name);
                     stt.Bind(2, contact.PhoneNumber);
@@ -35,8 +35,8 @@ namespace ExamSQLite_UWP.Models
         {
             try
             {
-                List<Contact> lstNote = new List<Contact>();
-                using (var stt = SQLiteUtil.GetIntances().Connection.Prepare("SELECT * from Note"))
+                List<Contact> ListContact= new List<Contact>();
+                using (var stt = SQLiteUtil.GetIntances().Connection.Prepare("SELECT * from Contact"))
                 {
                     while (stt.Step() == SQLitePCL.SQLiteResult.ROW)
                     {
@@ -44,9 +44,9 @@ namespace ExamSQLite_UWP.Models
                         getContact.Id = Convert.ToInt32(stt[0]);
                         getContact.Name = (string)stt[1];
                         getContact.PhoneNumber = (string)stt[2];
-                        lstNote.Add(getContact);
+                        ListContact.Add(getContact);
                     }
-                    return lstNote;
+                    return ListContact;
                 }
             }
             catch (Exception ex)

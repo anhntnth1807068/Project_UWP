@@ -9,7 +9,7 @@ namespace ExamSQLite_UWP.Utils
 {
     class SQLiteUtil
     {
-        private const string DatabaseName = "baithi.db";
+        private const string DatabaseName = "UWPContact.db";
 
         private static SQLiteUtil _instance;
         public SQLiteConnection Connection { get; }
@@ -31,16 +31,12 @@ namespace ExamSQLite_UWP.Utils
 
         private void CreateTables()
         {
-            string sql = @"CREATE TABLE IF NOT EXISTS AddContact (Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,Name VARCHAR( 140 ),PhoneNumber VARCHAR( 140 ));";
+            string sql = @"CREATE TABLE IF NOT EXISTS AddContact (Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,Name VARCHAR( 140 ),Phone VARCHAR( 140 ));";
             using (var statement = Connection.Prepare(sql))
             {
                 statement.Step();
             }
-            string SQL = @"CREATE TABLE IF NOT EXISTS SearchContact (Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,Name VARCHAR( 140 ),PhoneNumber VARCHAR( 140 ));";
-            using (var statement = Connection.Prepare(SQL))
-            {
-                statement.Step();
-            }
+           
         }
     }
 }
